@@ -5,7 +5,7 @@ export default function NavBar() {
   const router = useRouter();
   return (
     <nav>
-      <Link style={{background:"green"}} href="/" legacyBehavior >
+      <Link  href="/" legacyBehavior >
         <a className={router.pathname === "/" ? "active":""}>Home</a>
       </Link>
       <Link href="/about" legacyBehavior>
