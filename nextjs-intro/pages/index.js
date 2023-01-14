@@ -1,17 +1,22 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Seo from "../components/Seo";
 
 
 export default function Home({results}) {
-
+  const router = useRouter();
   return (
     <div className="wrap">
       <Seo title = "Home"/>
       {results?.map(m => 
-      <div key = {m.id}>
-        <img src={`https://image.tmdb.org/t/p/w500/${m.poster_path}`}></img>
-        <p>{m.original_title}</p>
-      </div> )}
+      <Link href = {`/movies/${m.original_title}/${m.id}`} key = {m.id}>
+        <div className="movie" key = {m.id}>
+          <img src={`https://image.tmdb.org/t/p/w500/${m.poster_path}`}></img>
+          <p>{m.original_title}</p>
+        </div> 
+      </Link>
+      )}
     <style jsx>{`
       .wrap {
         display: grid;
@@ -28,8 +33,9 @@ export default function Home({results}) {
       img:hover {
         transform: scale(1.04)
       }
-      div {
+      .movie {
         padding-bottom: 50px;
+        cursor: pointer;
       }
       p {
         font-weight: bold;
