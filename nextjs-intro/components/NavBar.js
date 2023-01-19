@@ -6,6 +6,12 @@ export default function NavBar() {
   return (
     <nav>
       <img src = "/next.svg"></img>
+      <div className="loginWrap">
+        <Link href = "/login">
+          <button>로그인하러가기</button>
+        </Link>
+        
+      </div>
       <div>
         <Link  href="/" legacyBehavior >
           <span className={router.pathname === "/" ? "active":""}>Home</span>
@@ -36,6 +42,20 @@ export default function NavBar() {
       }
       span {
         margin: 20px;
+      }
+      .loginWrap {
+        position: absolute;
+        top:0;
+        right:120px;
+      }
+      button {
+        border:none;
+        background:none;
+        font-style: italic;
+      }
+      button:hover {
+        text-decoration: underline;
+        cursor:pointer;
       }
       `}</style>
     </nav>
