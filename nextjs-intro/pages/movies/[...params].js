@@ -83,7 +83,7 @@ export default function Detail({data}){
     ;
 }
 export async function getServerSideProps({ params: { params } }) {
-    const data = await (await fetch(`http://localhost:3000/api/movies/${params[1]}`)).json();
+    const data = await (await fetch(`https://next-movie-silk-five.vercel.app/api/movies/${params[1]}`)).json();
     return {
       props: { data },
     };
