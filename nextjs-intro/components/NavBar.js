@@ -1,16 +1,31 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
+import { kakaoInit } from "./kakaoInit";
 
 export default function NavBar() {
+  const [userImg, setUserImg] = useState("");
+
+  const kakao = kakaoInit();
   const router = useRouter();
+
+  kakao.API.request({
+    url: '/v1/api/talk/profile',
+    success : (res) => {
+        setUserImg(res.profileImageURL)
+    },
+    fail : (error) => {
+        console.log(error)
+    }
+})
+
   return (
     <nav>
-      <img src = "/next.svg"></img>
+      <img className = "logoImg"src = "/next.svg"></img>
       <div className="loginWrap">
-        <Link href = "/login">
-          <button>로그인하러가기</button>
-        </Link>
-        
+        {userImg === "" ?
+        <Link href = "/login"><button>로그인하러가기</button></Link> :
+        <Link href = "/kakao"><img className="profileImg" src = {userImg}/></Link>}
       </div>
       <div>
         <Link  href="/" legacyBehavior >
@@ -33,9 +48,15 @@ export default function NavBar() {
       .active {
         color: tomato;
       }
-      img {
+      .logoImg {
         margin: 20px 10px 10px 10px;
         max-width: 80px;
+      }
+      .profileImg {
+        width:40px;
+        height:40px;
+        object-fit: cover;
+        border-radius: 50px;
       }
       div {
         padding: 10px 20px;
