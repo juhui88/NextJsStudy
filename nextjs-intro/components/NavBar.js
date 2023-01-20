@@ -1,23 +1,28 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { loginState, profileImgState } from "./atom";
 import { kakaoInit } from "./kakaoInit";
 
 export default function NavBar() {
-  const [userImg, setUserImg] = useState("");
+  const [userImg, setUserImg] = useRecoilState(profileImgState);
+  const login = useRecoilValue(loginState);
 
-  const kakao = kakaoInit();
+  if(login) {
+    const kakao = kakaoInit();
+    
+    kakao.API.request({
+      url: '/v1/api/talk/profile',
+      success : (res) => {
+          setUserImg(res.profileImageURL)
+      },
+      fail : (error) => {
+          console.log(error)
+      }
+    })
+  }
   const router = useRouter();
-
-  kakao.API.request({
-    url: '/v1/api/talk/profile',
-    success : (res) => {
-        setUserImg(res.profileImageURL)
-    },
-    fail : (error) => {
-        console.log(error)
-    }
-})
 
   return (
     <nav>

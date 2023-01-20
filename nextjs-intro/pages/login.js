@@ -1,9 +1,13 @@
 import { kakaoInit } from "../components/kakaoInit";
 import Router from 'next/router'
 import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { loginState } from "../components/atom";
 
 export default function Login() {
     const [userImg, setUserImg] = useState("");
+    const [login, setLogin] = useRecoilState(loginState);
+
 
     const kakaoLogin = async() => {
         const kakao = kakaoInit();
@@ -15,6 +19,7 @@ export default function Login() {
                     success: (res) => { 
                         // 로그인 성공할 경우 정보 확인 후 /kakao페이지로 push
                         console.log(res);
+                        setLogin(true);
                         Router.push('/kakao')
                     },
                     fail: (error) => {
