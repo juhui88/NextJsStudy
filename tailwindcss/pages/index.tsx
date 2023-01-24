@@ -1,6 +1,23 @@
 import type { NextPage } from "next"
+import React, { useState } from "react"
 
 const Home:NextPage = () =>{
+  const [color, setColor] = useState("red")
+  const [num, setNum] = useState(1);
+  const onClickColor = (color:string) => {
+    setColor(color)
+  }
+  const onClickMinus = () => {
+    
+    if(num === 1) {
+      setNum(1);
+    }else {
+      setNum(prev=>prev-1)
+    }
+  }
+  const onClickPlus = () => {
+    setNum(prev=>prev+1)
+  }
   return (
     <div className="bg-slate-400 py-20  grid gap-10 ">
       <div className="bg-white p-6 rounded-3xl shadow-xl w-96 mx-auto">
@@ -48,8 +65,51 @@ const Home:NextPage = () =>{
           </div>
         </div>
       </div>
-      <div className="bg-white p-10 rounded-2xl shadow-xl w-96 mx-auto"></div>
-      <div className="bg-white p-10 rounded-2xl shadow-xl w-96 mx-auto"></div>
+      <div className="bg-white p-6 rounded-2xl shadow-xl w-96 mx-auto">
+        <div className="flex justify-between">
+          <div className="text-3xl">
+            <span className="font-semibold text-gray-500">←</span>
+          </div>
+          <div className="flex flex-row space-x-2">
+            <span className="p-2 font-semibold">⭐ 4.9</span>
+            <span className="p-2 shadow-xl rounded-lg">❤️</span>
+          </div>
+        </div>
+        <div className="flex justify-center p-5">
+          <img src = "favicon.ico"/>
+        </div>
+        <div>
+          <span className="font-bold">Swoon Lounge</span>
+          <div>
+            <span className="text-gray-400 text-sm">
+              {color}
+            </span>
+            <div className="flex justify-between">
+              <div className="flex flex-row space-x-5 py-3" >
+                <div className=" rounded-full border-2 border-red-300"onClick={()=>onClickColor("red")}>
+                  <div className="bg-red-300 h-5 w-5 rounded-full border-2 border-white "/>
+                </div>
+                <div className=" rounded-full border-2 border-white" onClick={()=>onClickColor("blue")}>
+                  <div className="bg-blue-300 h-5 w-5 rounded-full border-2 border-white"/>
+                </div>
+                <div className=" rounded-full border-2 border-white" onClick={()=>onClickColor("green")}>
+                  <div className="bg-green-300 h-5 w-5 rounded-full border-2 border-white"/>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3 text-xl">
+                  <div className="bg-blue-100 w-8 h-8 text-center rounded-xl text-blue-800" onClick={onClickMinus}>-</div>
+                  <div className="font-semibold">{num}</div>
+                  <div className="bg-blue-100 w-8 h-8 text-center rounded-xl text-blue-800" onClick={onClickPlus}>+</div>
+                </div>
+              </div>
+          </div>
+          <div className="py-1 flex justify-between items-center">
+            <div className="text-xl font-semibold">${450 * num}</div>
+            <div className="bg-blue-500 text-white p-2 w-1/2 text-center rounded-xl">Add to cart</div>
+          </div>
+        </div>
+        
+      </div>
     </div>
   )
 }
