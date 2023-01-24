@@ -85,9 +85,9 @@ const Home:NextPage = () =>{
             <div className="flex justify-between">
               
               <div className="flex flex-row space-x-5 py-3" >
-                <button className="w-5 h-5 rounded-full bg-red-300 focus:ring-2 ring-offset-2 ring-red-300"/>
-                <button className="w-5 h-5 rounded-full bg-blue-300 focus:ring-2 ring-offset-2 ring-blue-300"/>
-                <button className="w-5 h-5 rounded-full bg-yellow-300 focus:ring-2 ring-offset-2 ring-yellow-300"/>
+                <button className="w-5 h-5 rounded-full bg-red-300 focus:ring-2 ring-offset-2 ring-red-300 transition"/>
+                <button className="w-5 h-5 rounded-full bg-blue-300 focus:ring-2 ring-offset-2 ring-blue-300 transition"/>
+                <button className="w-5 h-5 rounded-full bg-yellow-300 focus:ring-2 ring-offset-2 ring-yellow-300 transition"/>
               </div>
               <div className="flex items-center space-x-3 text-xl">
                   <div className="bg-blue-100 w-8 h-8 text-center rounded-xl text-blue-800" onClick={onClickMinus}>-</div>
