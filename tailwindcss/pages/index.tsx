@@ -15,8 +15,8 @@ const Home:NextPage = () =>{
     setNum(prev=>prev+1)
   }
   return (
-    <div className="bg-slate-400 py-20  grid gap-10 min-h-screen">
-      <div className="bg-white p-6 rounded-3xl shadow-xl w-96 mx-auto">
+    <div className="bg-slate-400 py-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 xl:place-content-center min-h-screen">
+      <div className="bg-white p-6 rounded-3xl shadow-xl  mx-20">
         <span className="font-semibold text-3xl">Select Item</span>
         <ul>
           {[1,2,3,4,5].map(i=> (
@@ -28,7 +28,7 @@ const Home:NextPage = () =>{
         </ul>
         <ul>
           {["a", "b", "c", ""].map((c,i) => 
-          <li className="bg-red-500 py-2 empty:bg-blue-100" key = {i}>{c}</li>)}
+          <li className="bg-indigo-100 py-2 empty:bg-indigo-200" key = {i}>{c}</li>)}
         </ul>
         
         <div className="flex justify-between mt-2 pt-2 border-t-2 border-dashed">
@@ -45,7 +45,7 @@ const Home:NextPage = () =>{
         </div>
         
       </div>
-      <div className="bg-white overflow-hidden rounded-3xl shadow-xl w-96 mx-auto group">
+      <div className="bg-white overflow-hidden rounded-3xl shadow-xl  mx-20 group">
         <div className="bg-blue-500 p-6 pb-14 flex justify-between">
           <span className="text-white text-2xl">Profile</span>
           <span>🛒</span>
@@ -68,7 +68,7 @@ const Home:NextPage = () =>{
           </div>
         </div>
       </div>
-      <div className="bg-white p-6 rounded-2xl shadow-xl w-96 mx-auto">
+      <div className="bg-white p-6 rounded-2xl shadow-xl  mx-20 lg:col-span-2 xl:col-span-1">
         <div className="flex justify-between">
           <div className="text-3xl">
             <span className="font-semibold text-gray-500">←</span>
@@ -108,7 +108,7 @@ const Home:NextPage = () =>{
         </div>
         
       </div>
-      <div className="bg-white p-6 rounded-3xl shadow-xl w-96 mx-auto">
+      <div className="bg-white p-6 rounded-3xl shadow-xl  mx-20">
         <form className="flex flex-col space-y-2">
           <input type="text" required placeholder="username" className="peer"/>
           <span className="hidden peer-invalid:block peer-invalid:text-red-500">
@@ -120,19 +120,19 @@ const Home:NextPage = () =>{
           <input type="submit"/>
         </form>
       </div>
-      <div className="bg-white p-6 rounded-3xl shadow-xl w-96 mx-auto">
+      <div className="bg-white p-6 rounded-3xl shadow-xl  mx-20">
         <details className="select-none open:bg-indigo-200 open:text-white">
           <summary>내가 제일 좋아하는 음식</summary>
             <p>국밥</p>
             <p>순두부</p>
         </details>
       </div>
-      <div className="bg-white p-6 rounded-3xl shadow-xl w-96 mx-auto">
+      <div className="bg-white p-6 rounded-3xl shadow-xl  mx-20">
           <input type="file" className="file:bg-indigo-300 file:text-white file:border-indigo-300 file:rounded-md 
           file:hover:bg-white file:hover:text-indigo-300 file:hover:border-2 file:hover:border-indigo-300 transition-colors"/>
       </div>
-      <div className="bg-white p-6 rounded-3xl shadow-xl w-96 mx-auto">
-      <p className="first-letter:text-7xl first-letter:hover:text-purple-400">
+      <div className="bg-white p-6 rounded-3xl shadow-xl  mx-20">
+        <p className="first-letter:text-7xl first-letter:hover:text-purple-400">
         Hello everyone!
       </p>
       </div>
