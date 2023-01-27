@@ -120,6 +120,17 @@ const Home:NextPage = () =>{
           <input type="submit"/>
         </form>
       </div>
+      <div className="bg-white p-6 rounded-3xl shadow-xl w-96 mx-auto">
+        <details className="select-none open:bg-indigo-200 open:text-white">
+          <summary>내가 제일 좋아하는 음식</summary>
+            <p>국밥</p>
+            <p>순두부</p>
+        </details>
+      </div>
+      <div className="bg-white p-6 rounded-3xl shadow-xl w-96 mx-auto">
+          <input type="file" className="file:bg-indigo-300 file:text-white file:border-indigo-300 file:rounded-md 
+          file:hover:bg-white file:hover:text-indigo-300 file:hover:border-2 file:hover:border-indigo-300 transition-colors"/>
+      </div>
     </div>
   )
 }
