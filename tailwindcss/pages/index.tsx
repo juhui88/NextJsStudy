@@ -45,7 +45,7 @@ const Home:NextPage = () =>{
         </div>
         
       </div>
-      <div className="bg-white overflow-hidden rounded-3xl shadow-xl w-96 mx-auto">
+      <div className="bg-white overflow-hidden rounded-3xl shadow-xl w-96 mx-auto group">
         <div className="bg-blue-500 p-6 pb-14 flex justify-between">
           <span className="text-white text-2xl">Profile</span>
           <span>🛒</span>
@@ -56,7 +56,7 @@ const Home:NextPage = () =>{
               <span className="text-sm text-gray-500">Orders</span>
               <span className="font-semibold">340</span>
             </div>
-            <div className="h-24 w-24 bg-red-300 rounded-full" />
+            <div className="h-24 w-24 bg-gray-300 rounded-full group-hover:bg-red-300" />
             <div className="flex flex-col items-center">
               <span className="text-sm text-gray-500">Spent</span>
               <span className="font-semibold">$340</span>
