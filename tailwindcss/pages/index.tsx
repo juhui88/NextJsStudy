@@ -131,6 +131,11 @@ const Home:NextPage = () =>{
           <input type="file" className="file:bg-indigo-300 file:text-white file:border-indigo-300 file:rounded-md 
           file:hover:bg-white file:hover:text-indigo-300 file:hover:border-2 file:hover:border-indigo-300 transition-colors"/>
       </div>
+      <div className="bg-white p-6 rounded-3xl shadow-xl w-96 mx-auto">
+      <p className="first-letter:text-7xl first-letter:hover:text-purple-400">
+        Hello everyone!
+      </p>
+      </div>
     </div>
   )
 }
