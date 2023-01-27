@@ -108,6 +108,18 @@ const Home:NextPage = () =>{
         </div>
         
       </div>
+      <div className="bg-white p-6 rounded-3xl shadow-xl w-96 mx-auto">
+        <form className="flex flex-col space-y-2">
+          <input type="text" required placeholder="username" className="peer"/>
+          <span className="hidden peer-invalid:block peer-invalid:text-red-500">
+            This input is invalid
+          </span>
+          <span className="hidden peer-valid:block peer-valid:text-teal-500">
+            Awesome username
+          </span>
+          <input type="submit"/>
+        </form>
+      </div>
     </div>
   )
 }
