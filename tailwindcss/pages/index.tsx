@@ -15,9 +15,9 @@ const Home:NextPage = () =>{
     setNum(prev=>prev+1)
   }
   return (
-    <div className="bg-slate-400 py-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 xl:place-content-center min-h-screen">
-      <div className="bg-white p-6 rounded-3xl shadow-xl  mx-20">
-        <span className="font-semibold text-3xl">Select Item</span>
+    <div className="bg-slate-400 dark py-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 xl:place-content-center min-h-screen">
+      <div className="bg-white dark:bg-black p-6 rounded-3xl shadow-xl  mx-20">
+        <span className="font-semibold text-3xl dark:text-white">Select Item</span>
         <ul>
           {[1,2,3,4,5].map(i=> (
             <div key = {i} className="flex justify-between my-2 odd:bg-blue-50 even:bg-yellow-50">
