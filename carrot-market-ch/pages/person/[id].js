@@ -15,8 +15,8 @@ export default function PersonDetail({data}) {
         <div className="mt-20">
             <span className="text-xl font-bold py-2">Financial Assets</span>
             <div className="grid grid-cols-4 gap-4 mt-4">
-            {data.financialAssets.map(f =>
-            <div className="grid border p-2 rounded-md font-semibold"> 
+            {data.financialAssets?.map(f =>
+            <div key={f.id} className="grid border p-2 rounded-md font-semibold"> 
                 <span>Ticker: {f.ticker}</span>
                 <span>Shares: {f.numberOfShares}</span>
                 {f.exerciseOptionPrice ?` Exercise Price : $${f.exerciseOptionPrice}`:null}
